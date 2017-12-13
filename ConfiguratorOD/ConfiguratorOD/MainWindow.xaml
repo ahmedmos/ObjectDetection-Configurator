@@ -6,7 +6,11 @@
         xmlns:local="clr-namespace:ConfiguratorOD"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
-    </Grid>
+    <StackPanel VerticalAlignment="Center">
+        <TextBlock Text="Step 1 - Selecting your base path" HorizontalAlignment="Center" FontSize="30"/>
+        <TextBlock Text="Paste your path to your base CNTK folder" Margin="30,30,0,0"/>
+        <TextBox FontSize="23" HorizontalAlignment="Left" x:Name="CNTKFolderPathText" Margin="30,10,0,0" Width="300"/>
+
+        <Button Content="Next" Click="Button_Click" HorizontalAlignment="Center" Margin="50,50,50,0" Width="80" Height="40"/>
+    </StackPanel>
 </Window>

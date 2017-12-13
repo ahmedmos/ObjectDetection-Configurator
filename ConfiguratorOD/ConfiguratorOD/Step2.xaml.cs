@@ -11,33 +11,34 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace ConfiguratorOD
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for Step2.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Step2 : Window
     {
-        public MainWindow()
+        public Step2()
         {
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void btnNextClick(object sender, RoutedEventArgs e)
         {
-            if(CNTKFolderPathText.Text!="")
+            if(datasetNameTxt.Text != "" && DatasetFolderPath.Text!="" )
             {
-                StaticData.CNTKBaseFolderPath = CNTKFolderPathText.Text;
-                Step2 newwindow = new Step2();
-                newwindow.Show();
+                StaticData.DatasetName = datasetNameTxt.Text;
+                StaticData.DatasetPath = DatasetFolderPath.Text;
+
+                Step3 page3 = new Step3();
+                page3.Show();
                 this.Hide();
             }
             else
             {
-                MessageBox.Show("Path cannot be Empty", "Value Empty");
+                MessageBox.Show("Dataset Name or Path cant be empty");
             }
         }
     }
